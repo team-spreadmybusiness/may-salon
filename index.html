@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon</title>
+    <!-- Google-fonts = "Open Sans" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+BE+VLG:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Fontawesome 6.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Owl-carousel 2.3.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Alpine JS 3.14.1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="assets/css/output.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="container mx-auto flex flex-col lg:flex-row justify-around lg:items-center relative" x-data="{ showNavbar: false, showSidebar: false }">
+        <div class="flex items-center justify-between w-full lg:w-auto relative">
+            <a href="#" class="flex items-center justify-between text-2xl md:text-4xl">
+                <img src="assets/images/logo.avif" alt="BhatiSalon Logo" class="h-[90px] w-[75px]">
+                BhatiSalon
+            </a>
+            <button class="lg:hidden block text-gray-900 ml-4" @click="showSidebar = !showSidebar"
+                aria-label="Toggle sidebar">
+                <i class="fas fa-ellipsis-v fa-xl"></i>
+            </button>
+        </div>
+        <ul
+            class="hidden lg:block text-black lg:flex lg:space-x-16 lg:items-center tracking-wider text-sm font-medium uppercase">
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Home</a></li>
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Menu</a></li>
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Pages</a></li>
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Team</a></li>
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Gallery</a></li>
+            <li><a href="#" class="hover:border-b-2 hover:border-primary py-2">Contact</a></li>
+            <li>
+                <a href="#"
+                    class="inline-block px-7 py-4 bg-primary text-xs rounded-full text-white font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Book
+                    Now
+                </a>
+            </li>
+        </ul>
+        <div :class="{ 'translate-x-0': showSidebar, '-translate-x-full': !showSidebar }"
+            class="fixed inset-y-0 left-0 w-64 bg-black text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+            <div class="p-4">
+                <button @click="showSidebar = false" class="text-white">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            <ul class="mt-5 tracking-wider space-y-4 text-sm font-medium uppercase">
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Home</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Menu</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Pages</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Team</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Gallery</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Contact</a></li>
+                <li><a href="#" class="block px-4 py-2 bg-primary text-white rounded-md hover:bg-accent">Book Now</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- banner -->
+    <section>
+        <div class="owl-carousel banner-carousel">
+            <div class="relative after:absolute after:inset-0 after:bg-black/50">
+                <img src="assets/images/slide1.jpg" alt="">
+                <div
+                    class="text-white absolute top-1/2 -translate-y-1/2 left-10 tracking-wide lg:w-2/3 space-y-2 md:space-y-5 z-10">
+                    <h3 class="text-md md:text-2xl text-primary font-bold">Feel The Celebrity in You</h3>
+                    <h1 class="text-xl md:text-5xl lg:text-7xl font-bold md:w-2/3 md:leading-24">
+                        Hairstyles For All Ages
+                    </h1>
+                    <p class="lg:block hidden md:leading-8">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vel nobis laborum esse repellat
+                        ratione repudiandae quos dolorum animi voluptatem sequi assumenda voluptates, tempore, commodi
+                        ipsa tenetur corporis modi necessitatibus!
+                    </p>
+                    <p class="hidden lg:hidden md:block xl:hidden">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis esse sapiente aliquam
+                        laboriosam consequuntur ad!
+                    </p>
+                    <a href="#"
+                        class="inline-block px-5 py-3 md:px-7 md:py-4 bg-primary text-xs rounded-full text-white font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Appointment</a>
+                </div>
+            </div>
+            <div class="relative after:absolute after:inset-0 after:bg-black/50">
+                <img src="assets/images/slide2.jpg" alt="">
+                <div
+                    class="text-white absolute top-1/2 -translate-y-1/2 left-10 tracking-wide lg:w-2/3 space-y-2 md:space-y-5 z-10">
+                    <h3 class="text-md md:text-2xl text-primary font-bold">Feel The Celebrity in You</h3>
+                    <h1 class="text-xl md:text-5xl lg:text-7xl font-bold md:w-2/3 md:leading-24">
+                        Hairstyles For All Ages
+                    </h1>
+                    <p class="lg:block hidden md:leading-8">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vel nobis laborum esse repellat
+                        ratione repudiandae quos dolorum animi voluptatem sequi assumenda voluptates, tempore, commodi
+                        ipsa tenetur corporis modi necessitatibus!
+                    </p>
+                    <p class="hidden lg:hidden md:block xl:hidden">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis esse sapiente aliquam
+                        laboriosam consequuntur ad!
+                    </p>
+                    <a href="#"
+                        class="inline-block px-5 py-3 md:px-7 md:py-4 bg-primary text-xs rounded-full text-white font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Appointment</a>
+                </div>
+            </div>
+            <div class="relative after:absolute after:inset-0 after:bg-black/50">
+                <img src="assets/images/slide3.jpg" alt="">
+                <div
+                    class="text-white absolute top-1/2 -translate-y-1/2 left-10 tracking-wide lg:w-2/3 space-y-2 md:space-y-5 z-10">
+                    <h3 class="text-md md:text-2xl text-primary font-bold">Feel The Celebrity in You</h3>
+                    <h1 class="text-xl md:text-5xl lg:text-7xl font-bold md:w-2/3 md:leading-24">
+                        Hairstyles For All Ages
+                    </h1>
+                    <p class="lg:block hidden md:leading-8">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vel nobis laborum esse repellat
+                        ratione repudiandae quos dolorum animi voluptatem sequi assumenda voluptates, tempore, commodi
+                        ipsa tenetur corporis modi necessitatibus!
+                    </p>
+                    <p class="hidden lg:hidden md:block xl:hidden">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis esse sapiente aliquam
+                        laboriosam consequuntur ad!
+                    </p>
+                    <a href="#"
+                        class="inline-block px-5 py-3 md:px-7 md:py-4 bg-primary text-xs rounded-full text-white font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services -->
+    <section class="my-5">
+        <div class="container mx-auto text-center">
+            <h1 class="text-primary text-4xl font-bold mb-10">Our Services</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div>
+                    <img src="assets/images/service-1.webp" alt="">
+                    <div class="bg-red-100 w-full text-primary font-bold text-xl py-5">
+                        <p>Barber Services</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/images/service-2.png" alt="">
+                    <div class="bg-red-100 w-full text-primary font-bold text-xl py-5">
+                        <p>Home Services</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/1318/6459/files/man_with_patchy_beard_during_beard_grooming_at_a_salon_480x480.jpg?v=1609038653"
+                        alt="">
+                    <div class="bg-red-100 w-full text-primary font-bold text-xl py-5">
+                        <p>Cutting Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- amazing services -->
+    <section class="h-auto md:h-[175vh] lg:h-[130vh] relative my-10 after:absolute after:inset-0 after:bg-black/50"
+        style="background-image: url('assets/images/service-bg.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;">
+        <div class="container mx-auto text-center relative z-50 text-white p-5">
+            <h1 class="text-primary text-3xl md:text-4xl font-bold my-6">Amazing Services</h1>
+            <p class="w-full md:w-2/3 mx-auto leading-7 md:leading-8 text-xs md:text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore impedit, eaque debitis quae
+                eum incidunt assumenda reprehenderit repellendus quaerat.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-10">
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/svg1.svg" alt="Hair Cutting"
+                            class="w-[60px] md:w-[80px] svg-white block">
+                    </div>
+                    <p class="text-lg">Hair Cutting</p>
+                </div>
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/trimmer-icon.svg" alt="Trim Your Beard"
+                            class="w-[30px] md:w-[40px] svg-white block">
+                    </div>
+                    <p class="text-lg">Trim Your Beard</p>
+                </div>
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/compact-mirror-icon.svg" alt="Hair Color"
+                            class="w-[60px] md:w-[80px] svg-white block">
+                    </div>
+                    <p class="text-lg">Hair Color</p>
+                </div>
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/soap-bodywash-bodylotion-svgrepo-com.svg" alt="Cleansing Facial"
+                            class="w-[60px] md:w-[80px] svg-white block">
+                    </div>
+                    <p class="text-lg">Cleansing Facial</p>
+                </div>
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/man-hair-hairstyle-svgrepo-com.svg" alt="Hair Styling"
+                            class="w-[60px] md:w-[80px] svg-white block">
+                    </div>
+                    <p class="text-lg">Hair Styling</p>
+                </div>
+                <div class="rounded-3xl text-white py-6 bg-gray-700/30 transition-all duration-500 hover:bg-primary">
+                    <div class="p-5 flex justify-center items-center">
+                        <img src="assets/images/soap-bodywash-bodylotion-svgrepo-com.svg" alt="Cleansing Facial"
+                            class="w-[60px] md:w-[80px] svg-white block">
+                    </div>
+                    <p class="text-lg">Cleansing Facial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pricing -->
+    <section class="my-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-primary text-3xl md:text-4xl font-bold my-6 text-center">Fair Price Guarantee</h1>
+            <p class="w-full lg:w-2/3 text-center mx-auto leading-7 md:leading-8 text-xs md:text-base mb-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore impedit, eaque debitis quae eum incidunt assumenda reprehenderit repellendus quaerat.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/svg1.svg" alt="Haircuts" class="h-16 sm:h-20">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Haircuts</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/svg1.svg" alt="Haircuts" class="h-16 sm:h-20">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Haircuts</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/straight-barber-razor-icon.svg" alt="Buzz Cut" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Buzz Cut</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/straight-barber-razor-icon.svg" alt="Buzz Cut" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Buzz Cut</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/bath-sponge-svgrepo-com.svg" alt="Skin Fade" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Skin Fade</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center border-b-2 pb-2 border-dashed">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/bath-sponge-svgrepo-com.svg" alt="Skin Fade" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Skin Fade</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/man-hair-hairstyle-svgrepo-com.svg" alt="Chap Haircut" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Chap Haircut</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                    <div class="flex gap-2 items-center w-full sm:w-auto mb-2 sm:mb-0">
+                        <img src="assets/images/man-hair-hairstyle-svgrepo-com.svg" alt="Chap Haircut" class="h-16">
+                        <div>
+                            <h4 class="text-lg sm:text-xl transition-all duration-300 hover:text-primary font-bold">Chap Haircut</h4>
+                            <p class="text-sm leading-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis consectetur totam omnis at? Exercitationem.</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-base sm:text-lg flex items-center gap-1">
+                        <i class="fas fa-indian-rupee"></i> 150
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- our work -->
+    <section class="my-10">
+        <div class="container mx-auto">
+            <h1 class="text-primary text-3xl md:text-4xl font-bold my-6 text-center">Our Work</h1>
+            <p class="w-full lg:w-2/3 text-center mx-auto leading-7 md:leading-8 text-xs md:text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore impedit, eaque debitis quae
+                eum incidunt assumenda reprehenderit repellendus quaerat.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
+                <div class="grid grid-rows-3 gap-5">                    
+                    <div class="relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery1.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery2.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery3.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-rows-3 gap-5">
+                    <div class="row-span-2 relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery4.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="row-span-1 relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery5.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-rows-3 gap-5">
+                    <div class="row-span-1 relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery6.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div> <div class="row-span-1 relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery7.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div> <div class="row-span-1 relative after:absolute after:inset-0 after:w-full after:h-full after:bg-gray-700/50 after:hidden hover:after:block group m-1">
+                        <img src="assets/images/gallery8.jpg" alt="" >
+                        <a href="#" class="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 hidden group-hover:block z-50 bg-gray-400/50 h-10 w-10 text-center py-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="h-[150vh] md:h-[110vh] relative after:absolute after:inset-0 after:bg-black/50 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/page-titil-bg.jpg');">
+        <div class="container mx-auto absolute z-50 top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center">
+            <h1 class="text-primary text-3xl md:text-4xl font-bold my-4 md:my-10 text-center">Our Work</h1>
+            <p class="text-white w-full sm:w-4/5 lg:w-2/3 text-center mx-auto leading-7 md:leading-8 text-xs md:text-base px-4 md:px-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore impedit, eaque debitis quae eum incidunt assumenda reprehenderit repellendus quaerat.
+            </p>
+            <div class="owl-carousel testimonial-carousel text-white mt-10">
+                <div class="text-center bg-gray-700/50 sm:w-3/4 md:w-1/2 lg:w-3/4 rounded-2xl mx-auto p-5 md:p-10 mb-5">
+                    <p class="text-sm mb-5 leading-8">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quaerat natus delectus. Unde adipisci suscipit harum ipsa! Nostrum repudiandae tenetur dolorum qui earum accusantium mollitia.
+                    </p>
+                    <div class="flex justify-center items-center gap-5">
+                        <div class="w-[60px] h-[60px] md:w-[75px] md:h-[75px]">
+                            <img src="assets/images/testi-1.avif" alt="Rahul Dogra" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold">Rahul Dogra</h3>
+                            <p class="text-sm text-primary font-semibold">Investment Banker</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center bg-gray-700/50 w-11/12 sm:w-3/4 md:w-1/2 lg:w-3/4 rounded-2xl mx-auto p-5 md:p-10 mb-5">
+                    <p class="text-sm mb-5 leading-8">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quaerat natus delectus. Unde adipisci suscipit harum ipsa! Nostrum repudiandae tenetur dolorum qui earum accusantium mollitia.
+                    </p>
+                    <div class="flex justify-center items-center gap-5">
+                        <div class="w-[60px] h-[60px] md:w-[75px] md:h-[75px]">
+                            <img src="assets/images/testi-2.webp" alt="Amit Mishra" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold">Amit Mishra</h3>
+                            <p class="text-sm text-primary font-semibold">ShopKeeper</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center bg-gray-700/50 w-11/12 sm:w-3/4 md:w-1/2 lg:w-3/4 rounded-2xl mx-auto p-5 md:p-10 mb-5">
+                    <p class="text-sm mb-5 leading-8">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quaerat natus delectus. Unde adipisci suscipit harum ipsa! Nostrum repudiandae tenetur dolorum qui earum accusantium mollitia.
+                    </p>
+                    <div class="flex justify-center items-center gap-5">
+                        <div class="w-[60px] h-[60px] md:w-[75px] md:h-[75px]">
+                            <img src="assets/images/testi-3.webp" alt="Juli Verma" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold">Juli Verma</h3>
+                            <p class="text-sm text-primary font-semibold">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center bg-gray-700/50 w-11/12 sm:w-3/4 md:w-1/2 lg:w-3/4 rounded-2xl mx-auto p-5 md:p-10 mb-5">
+                    <p class="text-sm mb-5 leading-8">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quaerat natus delectus. Unde adipisci suscipit harum ipsa! Nostrum repudiandae tenetur dolorum qui earum accusantium mollitia.
+                    </p>
+                    <div class="flex justify-center items-center gap-5">
+                        <div class="w-[60px] h-[60px] md:w-[75px] md:h-[75px]">
+                            <img src="assets/images/test-4.webp" alt="Sia Dseouza" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold">Sia Dseouza</h3>
+                            <p class="text-sm text-primary font-semibold">Chartered Accountant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- our artists -->
+     <section class="my-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10">
+                <div class="flex flex-col items-center">
+                    <img src="assets/images/partner-1.jpg" alt="Siddhi Dogra" class="w-full h-64 md:h-72 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg md:text-xl font-bold">Siddhi Dogra</h3>
+                    <p class="text-sm text-primary font-semibold">Tattoo Artist</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/images/partner-2.avif" alt="Mohit Sharma" class="w-full h-64 md:h-72 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg md:text-xl font-bold">Mohit Sharma</h3>
+                    <p class="text-sm text-primary font-semibold">Piercing Artist</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/images/partner-3.avif" alt="Ankit Murari" class="w-full h-64 md:h-72 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg md:text-xl font-bold">Ankit Murari</h3>
+                    <p class="text-sm text-primary font-semibold">Hair Artist</p>
+                </div>
+            </div>            
+        </div>
+     </section>
+
+    <!-- footer -->
+    <footer class="text-white py-10 relative bg-black">
+        <div class="container mx-auto my-16">
+            <div class="grid lg:grid-cols-5 md:grid-cols-2 gap-5">
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="text-primary transition-all duration-300 hover:text-primary font-bold text-4xl">
+                            BhatiSalon
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-house"></i>
+                        Office No. RZ-144 , Service Road & Main Jagadamba Road, Tughlakabad Extension, Tughlakabad, New
+                        Delhi, Delhi 110019
+                    </li>
+                    <li class="flex gap-5 items-center">
+                        <i class="fas fa-phone"></i>
+                        <a href="#" class="transition-all duration-300 hover:text-secondary">
+                            099107 05147
+                        </a>
+                    </li>
+                    <li class="flex gap-5 items-center">
+                        <i class="fas fa-envelope"></i>
+                        <a href="https://spreadmybusiness.in/" class="transition-all duration-300 hover:text-secondary">
+                            info@SpreadMyBusiness.in
+                        </a>
+                    </li>
+                    <li>
+                        <ul class="flex gap-2">
+                            <li>
+                                <a href="#"
+                                    class="h-10 w-10 flex justify-center items-center rounded-full bg-primary transition-all duration-300 hover:bg-accent">
+                                    <i class="fab fa-twitter fa-sm"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="px-2 h-10 w-10 flex justify-center items-center rounded-full bg-primary transition-all duration-300 hover:bg-accent">
+                                    <i class="fab fa-facebook fa-sm"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="px-2 h-10 w-10 flex justify-center items-center rounded-full bg-primary transition-all duration-300 hover:bg-accent">
+                                    <i class="fab fa-google fa-sm"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="px-2 h-10 w-10 flex justify-center items-center rounded-full bg-primary transition-all duration-300 hover:bg-accent">
+                                    <i class="fab fa-instagram fa-sm"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="px-2 h-10 w-10 flex justify-center items-center rounded-full bg-primary transition-all duration-300 hover:bg-accent">
+                                    <i class="fab fa-linkedin-in fa-sm"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="space-y-4 ms-3">
+                    <li class="mb-10">
+                        <h3 class="text-lg font-semibold">UseFul Links</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Privacy Protection</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Safe Payments</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Terms of Services</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Support</a>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="mb-10">
+                        <h3 class="text-lg font-semibold">Helps Desk</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Plaster machine</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Pedometer</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Cleaning Scissor</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Smart Mask</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Pedometer</a>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="mb-10">
+                        <h3 class="text-lg font-semibold">Information</h3>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Customer Care</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Services</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Legal Help</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Our Project</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Our Project</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition-all duration-300 hover:text-primary">Meet With Us</a>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="mb-10">
+                        <h3 class="text-lg font-semibold">Get In Touch</h3>
+                    </li>
+                    <li>
+                        <p>
+                            Sign up and receive the latest tips via email.
+                        </p>
+                    </li>
+                    <li class="w-11/12 flex text-black">
+                        <input type="email" placeholder="Enter Your Email Here..." class="outline-none px-1">
+                        <a href="#" class="px-3 py-2 text-white bg-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </li>
+                    <li>
+                        Call Now - <br> +(91) 73932-29321
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- footer-bottom -->
+        <div class="container mx-auto border-t absolute bottom-0 py-4">
+            <div class="flex justify-between">
+                <p class="tracking-wide">
+                    Copyright Powered by BhatiSalon
+                </p>
+                <p>
+                    Made with <i class="fas fa-heart text-red-500"></i> by  <a href="https://spreadmybusiness.in/"
+                    class="transition-all text-white duration-300 hover:text-accent">SpreadMyBusiness</a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
